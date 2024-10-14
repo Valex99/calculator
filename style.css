@@ -17,6 +17,8 @@ body {
   padding: 25px;
   background-color: rgb(245, 232, 253);
   border-radius: 6px;
+  border: 2px solid rgb(0, 0, 0);
+
 }
 
 .calc-screen {
@@ -37,12 +39,14 @@ body {
 }
 
 .btn {
+    width: 53px;
     padding: 10px 20px;
     border-radius: 6px;
     background-color: rgb(246, 171, 59);
 
     font-size: 17px;
     font-weight: bold;
+
 }
 
 .cd-btn {
