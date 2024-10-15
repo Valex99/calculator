@@ -3,6 +3,8 @@ let storingArray = [];
 let operator = 0;
 let number = 0;
 
+const maxLength = 10;
+
 let display = document.querySelector(".display");
 let log = document.querySelector(".log");
 
@@ -41,41 +43,57 @@ document.addEventListener("keydown", function (event) {
 // OPERATORS event listeners (click + keydown)
 let plus = document.getElementById("add_button");
 plus.addEventListener("click", function () {
-  plusEventHandler();
+  if (!storingArray.includes("+")) {
+    plusEventHandler();
+  }
 });
 document.addEventListener("keydown", function (event) {
   if (event.key === "+") {
-    plusEventHandler();
+    if (!storingArray.includes("+")) {
+      plusEventHandler();
+    }
   }
 });
 
 let minus = document.getElementById("minus_button");
 minus.addEventListener("click", function () {
-  minusEventHandler();
+  if (!storingArray.includes("-")) {
+    minusEventHandler();
+  }
 });
 document.addEventListener("keydown", function (event) {
   if (event.key === "-") {
-    minusEventHandler();
+    if (!storingArray.includes("-")) {
+      minusEventHandler();
+    }
   }
 });
 
 let star = document.getElementById("star_button");
 star.addEventListener("click", function () {
-  starEventHandler();
+  if (!storingArray.includes("*")) {
+    starEventHandler();
+  }
 });
 document.addEventListener("keydown", function (event) {
   if (event.key === "*") {
-    starEventHandler();
+    if (!storingArray.includes("*")) {
+      starEventHandler();
+    }
   }
 });
 
 let slash = document.getElementById("divide_button");
 slash.addEventListener("click", function () {
-  slashEventHandler();
+  if (!storingArray.includes("/")) {
+    slashEventHandler();
+  }
 });
 document.addEventListener("keydown", function (event) {
   if (event.key === "/") {
-    slashEventHandler();
+    if (!storingArray.includes("/")) {
+      slashEventHandler();
+    }
   }
 });
 
@@ -132,8 +150,10 @@ function divide(a, b) {
 
 // EVENT HANDLER FUNCTIONS
 function numberEventHandler(num) {
-  workingArray.push(num);
-  display.textContent = workingArray.join("");
+  if (workingArray.length < 10) {
+    workingArray.push(num);
+    display.textContent = workingArray.join("");
+  }
 }
 
 function plusEventHandler() {
@@ -204,7 +224,3 @@ function deleteEventHandler() {
     display.textContent = 0;
   }
 }
-
-// NEXT TASKS:
-// Handle too long inputs / outputs
-// Handle multiple operator being pressed consecutively + + +...
