@@ -64,13 +64,13 @@ body {
     padding: 10px 23px;
 }
 
-.calc-log {
+.log {
     height: 30px;
     text-align: right;
     font-size: 22px;
 }
 
-.calc-result {
+.display {
     height: 40px;
     margin-top: 10px;
 
